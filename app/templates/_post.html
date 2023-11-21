@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col-lg-8">
+        <div class="card mb-4">
+            <!-- <a href="#!"><img class="card-img-top" src="https://dummyimage.com/850x350/dee2e6/6c757d.jpg" alt="..."></a> -->
+            <div class="card-body">
+                <h2 class="card-title">{{ post.title }}</h2>
+                <p class="card-text">{{ post.intro }}</p>
+                <div class="small text-muted">{{ post.date.date() }}</div>
+                {% with author = post.author %}
+                    {% if author %}
+                        <table>
+                            <tr valign="top">
+                                <td><img src="{{ author.avatar(36) }}"></td>
+                                <td><a href="{{ url_for('profile', username=author.username) }}">{{post.author.username}}</a></td>
+                            </tr>
+                        </table>
+                    {% endif %}
+                {% endwith %}<br>
+                <a class="btn btn-primary" href='/posts/{{ post.id }}'>Read more →</a>
+            </div>
+        </div>
+    </div>
+</div>

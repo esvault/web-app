@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Главная страница
+{% endblock %}
+
+{% block body %}
+    <h1>Hi, {{ current_user.username }}!</h1>
+    {% for post in posts %}
+        {% include '_post.html' %}
+    {% endfor %}
+{% endblock %}

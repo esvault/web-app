@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Посты
+{% endblock %}
+
+{% block body %}
+    <h1> Все посты </h1>
+    {% for post in articles %}
+        {% include '_post.html' %}
+    {% endfor %}
+{% endblock %}
